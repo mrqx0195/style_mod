@@ -13,7 +13,7 @@ public class DevilTriggerUtils {
         }
         tag.putInt("MaxDTGauge", Math.min(StyleConfig.INITIAL_DT_GAUGE.get(), StyleConfig.MAX_DT_GAUGE.get()) * 1000);
         StyleUtils.setStyleTag(player, tag);
-        return Math.max(StyleConfig.INITIAL_DT_GAUGE.get(), StyleConfig.MAX_DT_GAUGE.get()) * 1000;
+        return Math.min(StyleConfig.INITIAL_DT_GAUGE.get(), StyleConfig.MAX_DT_GAUGE.get()) * 1000;
     }
 
     public static int getDTGauge(Player player) {
@@ -28,7 +28,7 @@ public class DevilTriggerUtils {
 
     public static void setDTMax(Player player, int dtMax) {
         CompoundTag tag = StyleUtils.getStyleTag(player);
-        tag.putInt("MaxDTGauge", dtMax);
+        tag.putInt("MaxDTGauge", Math.min(dtMax, StyleConfig.MAX_DT_GAUGE.get()));
         StyleUtils.setStyleTag(player, tag);
     }
 

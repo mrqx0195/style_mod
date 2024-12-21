@@ -6,19 +6,14 @@ import net.minecraftforge.eventbus.api.Event;
 
 public class StyleEvent extends Event {
     @Cancelable
-    public static class StyleChangeEvent extends StyleEvent {
-        private final Player player;
+    public static class StyleChangeEvent extends net.minecraftforge.event.entity.player.PlayerEvent {
         private final String oldStyle;
         private final String newStyle;
 
         public StyleChangeEvent(Player player, String oldStyle, String newStyle) {
-            this.player = player;
+            super(player);
             this.oldStyle = oldStyle;
             this.newStyle = newStyle;
-        }
-
-        public Player getPlayer() {
-            return player;
         }
 
         public String getOldStyle() {

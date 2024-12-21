@@ -2,7 +2,6 @@ package net.mrqx.style_mod.client;
 
 import net.mrqx.style_mod.network.NetworkManager;
 import net.mrqx.style_mod.network.UseStyleMessage;
-import net.mrqx.style_mod.utils.StyleUtils;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -22,10 +21,8 @@ public class UseStyleHandler {
         if (!(event.player instanceof LocalPlayer))
             return;
 
-        LocalPlayer player = (LocalPlayer) event.player;
         if (StyleKeyMappings.KEY_USE_STYLE.isDown()) {
             UseStyleMessage msg = new UseStyleMessage();
-            msg.style = StyleUtils.getActivatingStyle(player);
             NetworkManager.INSTANCE.sendToServer(msg);
         }
     }

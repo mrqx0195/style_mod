@@ -25,7 +25,7 @@ public class Style {
 
     @SubscribeEvent
     public static void onStyleTick(TickEvent.PlayerTickEvent event) {
-        if (event.phase != TickEvent.Phase.START)
+        if (event.phase != TickEvent.Phase.START || !event.side.isServer())
             return;
 
         Player player = event.player;
@@ -53,7 +53,7 @@ public class Style {
 
     @SubscribeEvent
     public static void styleChange(StyleEvent.StyleChangeEvent event) {
-        Player player = event.getPlayer();
+        Player player = event.getEntity();
         CompoundTag tag = StyleUtils.getStyleTag(player);
         tag.putString("Style", event.getNewStyle());
         StyleUtils.setStyleTag(player, tag);
