@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Specification-Title: Style
+Specification-Vendor: mrqx0195
+Specification-Version: 1
+Implementation-Title: Style
+Implementation-Version: 1.20.1-1.0.0
+Implementation-Vendor: mrqx0195
+Implementation-Timestamp: 2024-12-21T18:12:15+0800
